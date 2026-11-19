@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Física em Foco — Luz, Cores e Ondas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Barra de Acessibilidade -->
+  <div class="a11y-bar" role="region" aria-label="Controles de acessibilidade">
+    <div class="container a11y-bar-inner">
+      <span class="a11y-label">Acessibilidade:</span>
+      <div class="a11y-controls" role="group" aria-label="Ajustes de leitura e visualização">
+        <button type="button" id="btn-font-dec" class="a11y-btn" aria-label="Diminuir tamanho da fonte">
+          A-
+        </button>
+        <button type="button" id="btn-font-reset" class="a11y-btn" aria-label="Restaurar tamanho da fonte">
+          A
+        </button>
+        <button type="button" id="btn-font-inc" class="a11y-btn" aria-label="Aumentar tamanho da fonte">
+          A+
+        </button>
+        <button type="button" id="btn-contrast" class="a11y-btn" aria-pressed="false">
+          Alto contraste
+        </button>
+        <button type="button" id="btn-spacing" class="a11y-btn" aria-pressed="false">
+          Mais espaçamento
+        </button>
+        <button type="button" id="btn-motion" class="a11y-btn" aria-pressed="false">
+          Reduzir animações
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cabeçalho e Navegação -->
+  <header class="site-header">
+    <div class="container header-content">
+      <div>
+        <p class="eyebrow">Física • Óptica e Ondas</p>
+        <h1 id="titulo-site">Luz, Cores e Ondas no Espaço</h1>
+        <p class="subtitle">
+          Explore como a luz viaja, se curva, forma cores e interage com a matéria — com leitura adaptável e prática interativa.
+        </p>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#conceitos">Conceitos</a>
+        <a href="#flashcards">Flashcards</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main id="conteudo-principal" tabindex="-1">
+    <!-- Seção de Conceitos -->
+    <section id="conceitos" class="section" aria-labelledby="titulo-conceitos">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="titulo-conceitos">Conceitos Essenciais</h2>
+          <p>Três pilares para entender a luz e o comportamento ondulatório na Física.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="info-card">
+            <span class="badge badge-blue">Ondas</span>
+            <h3>Comprimento e Frequência</h3>
+            <p>
+              Na relação fundamental da onda, a velocidade de propagação é o produto da frequência pelo comprimento de onda. Luz azul tem menor comprimento de onda e maior frequência que a luz vermelha.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="badge badge-purple">Refração</span>
+            <h3>Mudança de Meio e Velocidade</h3>
+            <p>
+              Quando a luz passa do ar para a água ou para o vidro, sua velocidade muda e ela pode desviar sua trajetória. É por isso que um canudo parece "quebrado" dentro de um copo com água.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="badge badge-violet">Espectro</span>
+            <h3>Do Violeta ao Infravermelho</h3>
+            <p>
+              A luz visível ocupa apenas uma pequena faixa do espectro eletromagnético. O violeta fica próximo ao ultravioleta (mais energético) e o vermelho próximo ao infravermelho.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Flashcards -->
+    <section id="flashcards" class="section section-alt" aria-labelledby="titulo-flashcards">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="titulo-flashcards">Flashcards de Revisão</h2>
+          <p>Clique em um cartão (ou pressione Enter / Espaço) para virar e conferir a resposta.</p>
+        </div>
+
+        <div class="flashcards-grid" id="flashcards-container"></div>
+      </div>
+    </section>
+
+    <!-- Seção de Quiz -->
+    <section id="quiz" class="section" aria-labelledby="titulo-quiz">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="titulo-quiz">Quiz Interativo</h2>
+          <p>Teste o que você sabe sobre óptica geométrica e ondas eletromagnéticas.</p>
+        </div>
+
+        <div class="quiz-box" aria-live="polite">
+          <div class="quiz-top">
+            <span id="quiz-progresso" class="quiz-progress">Questão 1 de 4</span>
+            <span id="quiz-pontuacao" class="quiz-score">Pontuação: 0</span>
+          </div>
+
+          <h3 id="quiz-pergunta" class="quiz-question">Carregando pergunta...</h3>
+
+          <div id="quiz-opcoes" class="quiz-options" role="group" aria-labelledby="quiz-pergunta"></div>
+
+          <p id="quiz-feedback" class="quiz-feedback" role="status"></p>
+
+          <div class="quiz-actions">
+            <button type="button" id="btn-proxima" class="btn-primary" disabled>
+              Próxima pergunta
+            </button>
+            <button type="button" id="btn-reiniciar-quiz" class="btn-secondary hidden">
+              Refazer quiz
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p><strong>Física em Foco</strong> — Projeto educacional acessível pronto para GitHub Pages.</p>
+      <p class="footer-note">Dica: use os botões no topo para ajustar fonte, contraste e espaçamento.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const body = document.body;
+
+      // Controle de acessibilidade: tamanho da fonte
+      let fontScale = 100;
+      const minFont = 85;
+      const maxFont = 135;
+
+      function updateFontScale() {
+        root.style.fontSize = `${fontScale}%`;
+        localStorage.setItem("a11y_font_scale", String(fontScale));
+      }
+
+      document.getElementById("btn-font-dec").addEventListener("click", () => {
+        fontScale = Math.max(minFont, fontScale - 10);
+        updateFontScale();
+      });
+
+      document.getElementById("btn-font-reset").addEventListener("click", () => {
+        fontScale = 100;
+        updateFontScale();
+      });
+
+      document.getElementById("btn-font-inc").addEventListener("click", () => {
+        fontScale = Math.min(maxFont, fontScale + 10);
+        updateFontScale();
+      });
+
+      // Controle de acessibilidade: toggles com estado persistente
+      function setupToggle(buttonId, className, storageKey) {
+        const btn = document.getElementById(buttonId);
+        const saved = localStorage.getItem(storageKey) === "true";
+        if (saved) {
+          body.classList.add(className);
+          btn.setAttribute("aria-pressed", "true");
+        }
+
+        btn.addEventListener("click", () => {
+          const active = body.classList.toggle(className);
+          btn.setAttribute("aria-pressed", String(active));
+          localStorage.setItem(storageKey, String(active));
+        });
+      }
+
+      setupToggle("btn-contrast", "high-contrast", "a11y_high_contrast");
+      setupToggle("btn-spacing", "wide-spacing", "a11y_wide_spacing");
+      setupToggle("btn-motion", "reduced-motion", "a11y_reduced_motion");
+
+      const savedFont = Number(localStorage.getItem("a11y_font_scale"));
+      if (!Number.isNaN(savedFont) && savedFont >= minFont && savedFont <= maxFont) {
+        fontScale = savedFont;
+        root.style.fontSize = `${fontScale}%`;
+      }
+
+      // Flashcards
+      const flashcards = [
+        {
+          topico: "Velocidade da luz",
+          frente: "Qual é a velocidade aproximada da luz no vácuo?",
+          verso: "Cerca de 300.000 km/s (3 × 10⁸ m/s). Em meios como água ou vidro, ela se propaga mais devagar."
+        },
+        {
+          topico: "Reflexão",
+          frente: "O que diz a 1ª Lei da Reflexão?",
+          verso: "O ângulo de incidência é igual ao ângulo de reflexão, ambos medidos em relação à reta normal."
+        },
+        {
+          topico: "Dispersão",
+          frente: "Por que um prisma separa a luz branca em cores?",
+          verso: "Cada cor tem um índice de refração ligeiramente diferente no vidro e sofre um desvio angular distinto."
+        },
+        {
+          topico: "Espectro",
+          frente: "Qual cor da luz visível tem maior frequência?",
+          verso: "O violeta tem maior frequência (e menor comprimento de onda) dentro da faixa visível ao olho humano."
+        }
+      ];
+
+      const flashcardsContainer = document.getElementById("flashcards-container");
+
+      flashcards.forEach((item, index) => {
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = "flashcard";
+        card.setAttribute("aria-pressed", "false");
+        card.setAttribute("aria-label", `Flashcard ${index + 1}: ${item.frente}. Clique para ver a resposta.`);
+
+        card.innerHTML = `
+          <span class="flashcard-tag">${item.topico}</span>
+          <span class="flashcard-state" data-state>Pergunta</span>
+          <p class="flashcard-text" data-text>${item.frente}</p>
+        `;
+
+        card.addEventListener("click", () => {
+          const flipped = card.classList.toggle("is-flipped");
+          card.setAttribute("aria-pressed", String(flipped));
+          const stateEl = card.querySelector("[data-state]");
+          const textEl = card.querySelector("[data-text]");
+
+          if (flipped) {
+            stateEl.textContent = "Resposta";
+            textEl.textContent = item.verso;
+          } else {
+            stateEl.textContent = "Pergunta";
+            textEl.textContent = item.frente;
+          }
+        });
+
+        flashcardsContainer.appendChild(card);
+      });
+
+      // Quiz
+      const questoes = [
+        {
+          pergunta: "Quando um raio de luz passa do ar para a água obliquamente e diminui de velocidade, ele:",
+          opcoes: [
+            "Aproxima-se da reta normal",
+            "Afasta-se da reta normal",
+            "Perde a frequência totalmente",
+            "Vira uma onda sonora"
+          ],
+          correta: 0,
+          explicacao: "Ao reduzir a velocidade entrando em um meio mais refringente (como a água), o raio refratado aproxima-se da normal."
+        },
+        {
+          pergunta: "Qual fenômeno explica a formação do arco-íris quando a luz solar atinge gotas de chuva?",
+          opcoes: [
+            "Apenas reflexão difusa",
+            "Refração, reflexão interna e dispersão das cores",
+            "Polarização magnética",
+            "Efeito Doppler sonoro"
+          ],
+          correta: 1,
+          explicacao: "A luz refrata ao entrar na gota, reflete internamente na parede oposta e se dispersa em cores ao sair."
+        },
+        {
+          pergunta: "Entre ondas de rádio, luz visível e raios X, qual costuma ter maior frequência?",
+          opcoes: [
+            "Ondas de rádio",
+            "Luz visível",
+            "Raios X",
+            "Todas têm exatamente a mesma frequência"
+          ],
+          correta: 2,
+          explicacao: "Raios X possuem comprimentos de onda muito curtos e, consequentemente, frequências muito altas."
+        },
+        {
+          pergunta: "Em um espelho plano, a imagem formada de um objeto real é:",
+          opcoes: [
+            "Real e invertida de cabeça para baixo",
+            "Virtual, direita e do mesmo tamanho do objeto",
+            "Sempre maior que o objeto",
+            "Visível apenas com lentes"
+          ],
+          correta: 1,
+          explicacao: "Espelhos planos formam imagens virtuais (não projetáveis em tela), direitas e de igual tamanho."
+        }
+      ];
+
+      let indiceAtual = 0;
+      let pontuacao = 0;
+      let respondeuAtual = false;
+
+      const elProgresso = document.getElementById("quiz-progresso");
+      const elPontuacao = document.getElementById("quiz-pontuacao");
+      const elPergunta = document.getElementById("quiz-pergunta");
+      const elOpcoes = document.getElementById("quiz-opcoes");
+      const elFeedback = document.getElementById("quiz-feedback");
+      const btnProxima = document.getElementById("btn-proxima");
+      const btnReiniciar = document.getElementById("btn-reiniciar-quiz");
+
+      function renderQuestao() {
+        respondeuAtual = false;
+        const q = questoes[indiceAtual];
+
+        elProgresso.textContent = `Questão ${indiceAtual + 1} de ${questoes.length}`;
+        elPontuacao.textContent = `Pontuação: ${pontuacao}`;
+        elPergunta.textContent = q.pergunta;
+        elFeedback.textContent = "";
+        elFeedback.className = "quiz-feedback";
+        elOpcoes.innerHTML = "";
+        btnProxima.disabled = true;
+        btnProxima.textContent = indiceAtual === questoes.length - 1 ? "Ver resultado final" : "Próxima pergunta";
+
+        q.opcoes.forEach((textoOpcao, idx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "quiz-option";
+          btn.textContent = textoOpcao;
+
+          btn.addEventListener("click", () => {
+            if (respondeuAtual) return;
+            respondeuAtual = true;
+
+            const todosBotoes = elOpcoes.querySelectorAll(".quiz-option");
+            todosBotoes.forEach((b) => (b.disabled = true));
+
+            if (idx === q.correta) {
+              pontuacao += 1;
+              btn.classList.add("is-correct");
+              elFeedback.textContent = `Correto! ${q.explicacao}`;
+              elFeedback.classList.add("is-success");
+            } else {
+              btn.classList.add("is-wrong");
+              todosBotoes[q.correta].classList.add("is-correct");
+              elFeedback.textContent = `Quase lá: ${q.explicacao}`;
+              elFeedback.classList.add("is-error");
+            }
+
+            elPontuacao.textContent = `Pontuação: ${pontuacao}`;
+            btnProxima.disabled = false;
+          });
+
+          elOpcoes.appendChild(btn);
+        });
+      }
+
+      btnProxima.addEventListener("click", () => {
+        if (indiceAtual < questoes.length - 1) {
+          indiceAtual += 1;
+          renderQuestao();
+        } else {
+          elProgresso.textContent = "Quiz concluído!";
+          elPergunta.textContent = `Você acertou ${pontuacao} de ${questoes.length} questões.`;
+          elOpcoes.innerHTML = "";
+          elFeedback.textContent =
+            pontuacao === questoes.length
+              ? "Excelente domínio! Você mandou muito bem em óptica e ondas."
+              : "Bom trabalho! Revise os flashcards e tente novamente para melhorar sua pontuação.";
+          elFeedback.className = "quiz-feedback is-success";
+          btnProxima.classList.add("hidden");
+          btnReiniciar.classList.remove("hidden");
+        }
+      });
+
+      btnReiniciar.addEventListener("click", () => {
+        indiceAtual = 0;
+        pontuacao = 0;
+        btnProxima.classList.remove("hidden");
+        btnReiniciar.classList.add("hidden");
+        renderQuestao();
+      });
+
+      renderQuestao();
+    })();
+  </script>
+</body>
+</html>
